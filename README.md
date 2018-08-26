@@ -131,7 +131,7 @@ Add ".min" to any JS/CSS file to get a minified version - if one doesn't exist, 
 /npm/github-markdown-css@2.4.1/github-markdown.min.css
 ```
 
-Omit the file path to get the [default file](#configuring-a-default-file-in-packagejson). This file is always minified:
+Omit the file path to get the [default file](#configuring-a-default-file-in-packagejson). This file is always minified (ei:
 
 ```
 /npm/jquery@3.1.0
@@ -224,7 +224,9 @@ All packages hosted on npm and tagged releases on GitHub are automatically avail
   1. `jsdelivr`
   2. `browser`
   3. `main`
-  
+ 
+We will first attempt to locate a minified version of the file provided here (by removing the extension, and looking for the same file `.min.js`). If we can't find one we will minify ourselves.
+ 
 Restrictions
 -------------------
  - Packages larger than 50 MB are not supported by default. We recommend removing files that are not needed from your package when possible. If you need to set a higher limit for your package, open an issue in this repo.
